@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DataBase
 {
-    public partial class Form1 : Form
+    public partial class AuthenticationForm : Form
     {
-        public Form1()
+        public AuthenticationForm()
         {
             InitializeComponent();
         }
@@ -28,11 +28,13 @@ namespace DataBase
             try
             {
                 test.OpenConnection();
-
+                AppForm appForm = new AppForm();
+                appForm.Show();
+                this.Hide();
             }
             catch
             {
-                MessageBox.Show("Ошибка.Неверные логин и/или пароль.");
+                MessageBox.Show("Неверные логин и/или пароль.", "Ошибка");
             }
             finally
             {

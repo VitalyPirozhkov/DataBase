@@ -1,7 +1,7 @@
 ﻿
 namespace DataBase
 {
-    partial class Form1
+    partial class AuthenticationForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
