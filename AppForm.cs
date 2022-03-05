@@ -16,6 +16,10 @@ namespace DataBase
         public AppForm()
         {
             InitializeComponent();
+            UpdateTableName();
+        }
+        public void UpdateTableName()
+        {
             List<string> tableNameList = new List<string>();
             DataRowCollection dataRows = GetTableName().Rows;
             for (int i = 0; i < dataRows.Count; i++)
@@ -24,7 +28,6 @@ namespace DataBase
             }
             nameTableBox.DataSource = tableNameList;
         }
-
         private void AppForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
@@ -34,11 +37,49 @@ namespace DataBase
         {
             string query = "SELECT table_name FROM information_schema.tables WHERE table_schema NOT IN('information_schema','pg_catalog');";
             DataBase dataBase = new DataBase();
-            dataBase.OpenConnection();
-            NpgsqlDataAdapter data = new NpgsqlDataAdapter(query, DataBase.ConnectionString);
             DataTable resultTable = new DataTable();
-            data.Fill(resultTable);
-            return resultTable;
+            try
+            {
+                dataBase.OpenConnection();
+                NpgsqlDataAdapter data = new NpgsqlDataAdapter(query, DataBase.ConnectionString);
+                data.Fill(resultTable);
+                return resultTable;
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка");
+                return resultTable;
+            }
+            finally
+            {
+                dataBase.CloseConnection();
+            }
+        }
+
+        private void deleteTableButton_Click(object sender, EventArgs e)
+        {
+            deleteTable(nameTableBox.SelectedItem.ToString());
+            UpdateTableName();
+        }
+        public void deleteTable(string tableName)
+        {
+            string query = $"DROP TABLE {tableName}";
+            DataBase dataBase = new DataBase();
+            try
+            {
+                dataBase.OpenConnection();
+                NpgsqlDataAdapter data = new NpgsqlDataAdapter(query, DataBase.ConnectionString);
+                DataTable table = new DataTable();
+                data.Fill(table);
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка");
+            }
+            finally
+            {
+                dataBase.CloseConnection();
+            }
         }
     }
 }
