@@ -83,6 +83,7 @@ namespace DataBase
             this.UpdateTableButton.TabIndex = 4;
             this.UpdateTableButton.Text = "Обновить выбранную таблицу";
             this.UpdateTableButton.UseVisualStyleBackColor = true;
+            this.UpdateTableButton.Click += new System.EventHandler(this.UpdateTableButton_Click);
             // 
             // DeleteTableButton
             // 

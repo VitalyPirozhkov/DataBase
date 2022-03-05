@@ -110,5 +110,10 @@ namespace DataBase
             createTableForm.Show();
             UpdateTableName();
         }
+
+        private void UpdateTableButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
