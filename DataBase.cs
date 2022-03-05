@@ -9,10 +9,10 @@ namespace DataBase
 {
     class DataBase
     {
-        public static string connectionSrting = "";// "Server=localhost;Port=5432;User ID = postgres; Password=Vitas2001;Database=library;";
-        public NpgsqlConnection connection = new NpgsqlConnection(connectionSrting);
+        private static string connectionSrting = "";// "Server=localhost;Port=5432;User ID = postgres; Password=Vitas2001;Database=library;";
+        private NpgsqlConnection connection = new NpgsqlConnection(connectionSrting);
 
-        public string ConnectionString
+        public static string ConnectionString
         {
             set
             {

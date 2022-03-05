@@ -90,6 +90,7 @@ namespace DataBase
             this.acsessButton.TabIndex = 5;
             this.acsessButton.Text = "Вход";
             this.acsessButton.UseVisualStyleBackColor = true;
+            this.acsessButton.Click += new System.EventHandler(this.acsessButton_Click);
             // 
             // Form1
             // 
