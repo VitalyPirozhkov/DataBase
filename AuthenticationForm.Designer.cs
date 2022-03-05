@@ -32,9 +32,9 @@ namespace DataBase
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.idBox = new System.Windows.Forms.TextBox();
-            this.passwordBox = new System.Windows.Forms.TextBox();
-            this.acsessButton = new System.Windows.Forms.Button();
+            this.IdBox = new System.Windows.Forms.TextBox();
+            this.PasswordBox = new System.Windows.Forms.TextBox();
+            this.AcsessButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -67,43 +67,43 @@ namespace DataBase
             this.label3.TabIndex = 2;
             this.label3.Text = "Пароль";
             // 
-            // idBox
+            // IdBox
             // 
-            this.idBox.Location = new System.Drawing.Point(122, 100);
-            this.idBox.Name = "idBox";
-            this.idBox.Size = new System.Drawing.Size(241, 22);
-            this.idBox.TabIndex = 3;
+            this.IdBox.Location = new System.Drawing.Point(122, 100);
+            this.IdBox.Name = "IdBox";
+            this.IdBox.Size = new System.Drawing.Size(241, 22);
+            this.IdBox.TabIndex = 3;
             // 
-            // passwordBox
+            // PasswordBox
             // 
-            this.passwordBox.Location = new System.Drawing.Point(122, 161);
-            this.passwordBox.Name = "passwordBox";
-            this.passwordBox.Size = new System.Drawing.Size(241, 22);
-            this.passwordBox.TabIndex = 4;
-            this.passwordBox.UseSystemPasswordChar = true;
+            this.PasswordBox.Location = new System.Drawing.Point(122, 161);
+            this.PasswordBox.Name = "PasswordBox";
+            this.PasswordBox.Size = new System.Drawing.Size(241, 22);
+            this.PasswordBox.TabIndex = 4;
+            this.PasswordBox.UseSystemPasswordChar = true;
             // 
-            // acsessButton
+            // AcsessButton
             // 
-            this.acsessButton.Location = new System.Drawing.Point(122, 222);
-            this.acsessButton.Name = "acsessButton";
-            this.acsessButton.Size = new System.Drawing.Size(241, 28);
-            this.acsessButton.TabIndex = 5;
-            this.acsessButton.Text = "Вход";
-            this.acsessButton.UseVisualStyleBackColor = true;
-            this.acsessButton.Click += new System.EventHandler(this.acsessButton_Click);
+            this.AcsessButton.Location = new System.Drawing.Point(122, 222);
+            this.AcsessButton.Name = "AcsessButton";
+            this.AcsessButton.Size = new System.Drawing.Size(241, 28);
+            this.AcsessButton.TabIndex = 5;
+            this.AcsessButton.Text = "Вход";
+            this.AcsessButton.UseVisualStyleBackColor = true;
+            this.AcsessButton.Click += new System.EventHandler(this.AcsessButton_Click);
             // 
-            // Form1
+            // AuthenticationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 287);
-            this.Controls.Add(this.acsessButton);
-            this.Controls.Add(this.passwordBox);
-            this.Controls.Add(this.idBox);
+            this.Controls.Add(this.AcsessButton);
+            this.Controls.Add(this.PasswordBox);
+            this.Controls.Add(this.IdBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "AuthenticationForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -115,9 +115,9 @@ namespace DataBase
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox idBox;
-        private System.Windows.Forms.TextBox passwordBox;
-        private System.Windows.Forms.Button acsessButton;
+        private System.Windows.Forms.TextBox IdBox;
+        private System.Windows.Forms.TextBox PasswordBox;
+        private System.Windows.Forms.Button AcsessButton;
     }
 }
 

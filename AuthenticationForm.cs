@@ -17,13 +17,13 @@ namespace DataBase
             InitializeComponent();
         }
 
-        private void acsessButton_Click(object sender, EventArgs e)
+        private void AcsessButton_Click(object sender, EventArgs e)
         {
-            if (idBox.Text == "" || passwordBox.Text == "")
+            if (IdBox.Text == "" || PasswordBox.Text == "")
             {
                 MessageBox.Show("Введите User ID и пароль");
             }
-            DataBase.ConnectionString = $"Server=localhost;Port=5432;User ID = {idBox.Text}; Password={passwordBox.Text};Database=test;";
+            DataBase.ConnectionString = $"Server=localhost;Port=5432;User ID = {IdBox.Text}; Password={PasswordBox.Text};Database=test;";
             DataBase test = new DataBase();
             try
             {

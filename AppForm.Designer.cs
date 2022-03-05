@@ -30,12 +30,12 @@ namespace DataBase
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.nameTableBox = new System.Windows.Forms.ComboBox();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.createTableButton = new System.Windows.Forms.Button();
-            this.updateTableButton = new System.Windows.Forms.Button();
-            this.deleteTableButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.NameTableBox = new System.Windows.Forms.ComboBox();
+            this.DataGridApp = new System.Windows.Forms.DataGridView();
+            this.CreateTableButton = new System.Windows.Forms.Button();
+            this.UpdateTableButton = new System.Windows.Forms.Button();
+            this.DeleteTableButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridApp)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -47,67 +47,68 @@ namespace DataBase
             this.label1.TabIndex = 0;
             this.label1.Text = "Список таблиц";
             // 
-            // nameTableBox
+            // NameTableBox
             // 
-            this.nameTableBox.FormattingEnabled = true;
-            this.nameTableBox.Location = new System.Drawing.Point(51, 88);
-            this.nameTableBox.Name = "nameTableBox";
-            this.nameTableBox.Size = new System.Drawing.Size(159, 24);
-            this.nameTableBox.TabIndex = 1;
+            this.NameTableBox.FormattingEnabled = true;
+            this.NameTableBox.Location = new System.Drawing.Point(51, 88);
+            this.NameTableBox.Name = "NameTableBox";
+            this.NameTableBox.Size = new System.Drawing.Size(159, 24);
+            this.NameTableBox.TabIndex = 1;
             // 
-            // dataGridView
+            // DataGridApp
             // 
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(292, 159);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.RowHeadersWidth = 51;
-            this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(488, 275);
-            this.dataGridView.TabIndex = 2;
+            this.DataGridApp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridApp.Location = new System.Drawing.Point(292, 159);
+            this.DataGridApp.Name = "DataGridApp";
+            this.DataGridApp.RowHeadersWidth = 51;
+            this.DataGridApp.RowTemplate.Height = 24;
+            this.DataGridApp.Size = new System.Drawing.Size(488, 275);
+            this.DataGridApp.TabIndex = 2;
             // 
-            // createTableButton
+            // CreateTableButton
             // 
-            this.createTableButton.Location = new System.Drawing.Point(292, 74);
-            this.createTableButton.Name = "createTableButton";
-            this.createTableButton.Size = new System.Drawing.Size(157, 51);
-            this.createTableButton.TabIndex = 3;
-            this.createTableButton.Text = "Создать таблицу";
-            this.createTableButton.UseVisualStyleBackColor = true;
+            this.CreateTableButton.Location = new System.Drawing.Point(292, 74);
+            this.CreateTableButton.Name = "CreateTableButton";
+            this.CreateTableButton.Size = new System.Drawing.Size(157, 51);
+            this.CreateTableButton.TabIndex = 3;
+            this.CreateTableButton.Text = "Создать таблицу";
+            this.CreateTableButton.UseVisualStyleBackColor = true;
+            this.CreateTableButton.Click += new System.EventHandler(this.CreateTableButton_Click);
             // 
-            // updateTableButton
+            // UpdateTableButton
             // 
-            this.updateTableButton.Location = new System.Drawing.Point(455, 74);
-            this.updateTableButton.Name = "updateTableButton";
-            this.updateTableButton.Size = new System.Drawing.Size(157, 51);
-            this.updateTableButton.TabIndex = 4;
-            this.updateTableButton.Text = "Обновить выбранную таблицу";
-            this.updateTableButton.UseVisualStyleBackColor = true;
+            this.UpdateTableButton.Location = new System.Drawing.Point(455, 74);
+            this.UpdateTableButton.Name = "UpdateTableButton";
+            this.UpdateTableButton.Size = new System.Drawing.Size(157, 51);
+            this.UpdateTableButton.TabIndex = 4;
+            this.UpdateTableButton.Text = "Обновить выбранную таблицу";
+            this.UpdateTableButton.UseVisualStyleBackColor = true;
             // 
-            // deleteTableButton
+            // DeleteTableButton
             // 
-            this.deleteTableButton.Location = new System.Drawing.Point(623, 74);
-            this.deleteTableButton.Name = "deleteTableButton";
-            this.deleteTableButton.Size = new System.Drawing.Size(157, 51);
-            this.deleteTableButton.TabIndex = 5;
-            this.deleteTableButton.Text = "Удалить выбранную таблицу";
-            this.deleteTableButton.UseVisualStyleBackColor = true;
-            this.deleteTableButton.Click += new System.EventHandler(this.deleteTableButton_Click);
+            this.DeleteTableButton.Location = new System.Drawing.Point(618, 74);
+            this.DeleteTableButton.Name = "DeleteTableButton";
+            this.DeleteTableButton.Size = new System.Drawing.Size(157, 51);
+            this.DeleteTableButton.TabIndex = 5;
+            this.DeleteTableButton.Text = "Удалить выбранную таблицу";
+            this.DeleteTableButton.UseVisualStyleBackColor = true;
+            this.DeleteTableButton.Click += new System.EventHandler(this.DeleteTableButton_Click);
             // 
             // AppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.deleteTableButton);
-            this.Controls.Add(this.updateTableButton);
-            this.Controls.Add(this.createTableButton);
-            this.Controls.Add(this.dataGridView);
-            this.Controls.Add(this.nameTableBox);
+            this.Controls.Add(this.DeleteTableButton);
+            this.Controls.Add(this.UpdateTableButton);
+            this.Controls.Add(this.CreateTableButton);
+            this.Controls.Add(this.DataGridApp);
+            this.Controls.Add(this.NameTableBox);
             this.Controls.Add(this.label1);
             this.Name = "AppForm";
             this.Text = "AppForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AppForm_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridApp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,10 +117,10 @@ namespace DataBase
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox nameTableBox;
-        private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.Button createTableButton;
-        private System.Windows.Forms.Button updateTableButton;
-        private System.Windows.Forms.Button deleteTableButton;
+        private System.Windows.Forms.ComboBox NameTableBox;
+        private System.Windows.Forms.DataGridView DataGridApp;
+        private System.Windows.Forms.Button CreateTableButton;
+        private System.Windows.Forms.Button UpdateTableButton;
+        private System.Windows.Forms.Button DeleteTableButton;
     }
 }

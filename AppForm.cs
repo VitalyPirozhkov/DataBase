@@ -16,6 +16,7 @@ namespace DataBase
         public AppForm()
         {
             InitializeComponent();
+            NameTableBox.SelectedIndexChanged += NameTableBox_SelectedIndexChanged;
             UpdateTableName();
         }
         public void UpdateTableName()
@@ -26,7 +27,28 @@ namespace DataBase
             {
                 tableNameList.Add((string)dataRows[i].ItemArray[0]);
             }
-            nameTableBox.DataSource = tableNameList;
+            NameTableBox.DataSource = tableNameList;
+        }
+        void NameTableBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string script = $"select \"column_name\", data_type from information_schema.columns where table_catalog = 'test' and table_schema = 'public' and table_name = '{NameTableBox.SelectedItem}'; ";
+            DataBase dataBase = new DataBase();
+            try
+            {
+                dataBase.OpenConnection();
+                NpgsqlDataAdapter data = new NpgsqlDataAdapter(script, DataBase.ConnectionString);
+                DataTable table = new DataTable();
+                data.Fill(table);
+                DataGridApp.DataSource = table;
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка");
+            }
+            finally
+            {
+                dataBase.CloseConnection();
+            }
         }
         private void AppForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -56,12 +78,12 @@ namespace DataBase
             }
         }
 
-        private void deleteTableButton_Click(object sender, EventArgs e)
+        private void DeleteTableButton_Click(object sender, EventArgs e)
         {
-            deleteTable(nameTableBox.SelectedItem.ToString());
+            DeleteTable(NameTableBox.SelectedItem.ToString());
             UpdateTableName();
         }
-        public void deleteTable(string tableName)
+        public void DeleteTable(string tableName)
         {
             string query = $"DROP TABLE {tableName}";
             DataBase dataBase = new DataBase();
@@ -80,6 +102,13 @@ namespace DataBase
             {
                 dataBase.CloseConnection();
             }
+        }
+
+        private void CreateTableButton_Click(object sender, EventArgs e)
+        {
+            CreateTableForm createTableForm = new CreateTableForm();
+            createTableForm.Show();
+            UpdateTableName();
         }
     }
 }
