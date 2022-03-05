@@ -27,7 +27,8 @@ namespace DataBase
             DataBase test = new DataBase();
             try
             {
-                test.OpenConnection();
+                //test.OpenConnection();
+                DataBase.ConnectionString =  "Server=localhost;Port=5432;User ID = postgres; Password=Vitas2001;Database=test;";
                 AppForm appForm = new AppForm();
                 appForm.Show();
                 this.Hide();
