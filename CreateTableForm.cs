@@ -38,7 +38,7 @@ namespace DataBase
         private void CreateTableButton_Click(object sender, EventArgs e)
         {
 
-             StringBuilder script = new StringBuilder($"{TableNameBox.Text}(");
+             StringBuilder script = new StringBuilder($"{TableNameBox.Text.ToLower()} (");
              DataGridViewRowCollection dataRows = ColumnDataGird.Rows;
             try
             {
@@ -72,7 +72,7 @@ namespace DataBase
             }
             catch
             {
-                MessageBox.Show("Ошибка. Попробуйте снова.");
+                MessageBox.Show("Ошибка. Неверный запрос или утеряна связь с БД. Попробуйте снова.");
             } 
         }
     }
